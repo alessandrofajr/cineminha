@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Sessão Cinema 🍿</title>
+</head>
+<body>
+    <section id="content">
+        <div class="header">
+            <h1 class="neon-text first-word">Sessão</h1>
+            <h1 class="neon-text second-word">Cinema</h1>
+
+        </div>
+
+        <div class="opening">
+            <p>Quer ajuda para escolher qual filme assistir? Escolha entre as opções abaixo para receber uma sugestão!</p>
+        </div>
+
+        <div class="options-box">
+            <h2>Gênero</h2>
+            <div class="genres">
+                <label class="checkbox-container">Ação
+                    <input type="checkbox" id="Ação" name="genre" value="Ação">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Animação
+                    <input type="checkbox" id="Animação" name="genre" value="Animação">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Aventura
+                    <input type="checkbox" id="Aventura" name="genre" value="Aventura">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Biografia
+                    <input type="checkbox" id="Biografia" name="genre" value="Biografia">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Comédia
+                    <input type="checkbox" id="Comédia" name="genre" value="Comédia">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Crime
+                    <input type="checkbox" id="Crime" name="genre" value="Crime">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Documentário
+                    <input type="checkbox" id="Documentário" name="genre" value="Documentário">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Drama
+                    <input type="checkbox" id="Drama" name="genre" value="Drama">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Fantasia
+                    <input type="checkbox" id="Fantasia" name="genre" value="Fantasia">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Terror
+                    <input type="checkbox" id="Horror" name="genre" value="Horror">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Mistério
+                    <input type="checkbox" id="Mistério" name="genre" value="Mistério">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Musical
+                    <input type="checkbox" id="Musical" name="genre" value="Musical">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Noir
+                    <input type="checkbox" id="Noir" name="genre" value="Noir">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Romance
+                    <input type="checkbox" id="Romance" name="genre" value="Romance">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Thriller
+                    <input type="checkbox" id="Thriller" name="genre" value="Thriller">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox-container">Western
+                    <input type="checkbox" id="Western" name="genre" value="Western">
+                    <span class="checkmark"></span>
+                </label>
+             </div>
+
+            <h2>Duração (em minutos)</h2>
+                <div class="slider-container">
+                    <div class="range-wrap">
+                        <input type="range" class="range" id="slider-input" min="45" max="453" value="453">
+                        <output class="bubble"></output>
+                      </div>
+                </div>
+
+                <hr>
+
+                <div class="buttons">
+                    <div class="left-buttons">
+                        <button type="button" class="select-all">Selecionar todos os gêneros</button> <br><br>
+                        <button type="button" class="clear-button">Remover filtros</button>
+                    </div>
+                    <div class="show-suggestion-button">
+                        <button type="button">Mostrar sugestão</button>
+                    </div>
+                </div>  
+
+        </div>
+
+        <div class="suggestion">
+            <p>Que tal assistir <strong><span id="movie"></span></strong> (<span id="originaltitle"></span>), <span id="genre"></span> dirigido por <span id="director"></span>, lançado em <span id="year"></span>? O filme tem <span id="runtimeMinutes"></span> minutos e nota <span id="rating"></span> no IMDB.</p>
+
+            <p><a id="anchor" target="_blank" rel="noopener">Clique aqui</a> para ir ao JustWatch e descobrir em quais plataformas esse título está disponível.</p>
+        </div>
+
+        <div class="no-suggestions">
+            <p>Ops! Parece que não há nenhum filme com os filtros selecionados. <span id="reload"><a href="#">Clique aqui</a></span> para tentar novamente.</p>
+        </div>
+
+        <div class="notes">
+            <p>* Dados coletados via IMDB em 08/06/2022.</p>
+            <p>** Somente filmes com mais de 1.000 avaliações e nota média maior do que 7.0.</p>
+        </div>
+    </section>
+
+    <div class="footer-hr">
+        <hr>
+    </div>
+
+    <section class="footer">
+        <p><strong>Design, tratamento dos dados e programação:</strong> <a href="https://github.com/alessandrofajr/">Alessandro Feitosa Jr</a></p>
+        <p><strong>Orientação:</strong> <a href="https://github.com/vsueiro/">Vinicius Sueiro</a> e <a href="https://github.com/RodrigoMenegat">Rodrigo Menegat</a></p>
+        <p><strong>Agradecimento:</strong> <a href="https://www.linkedin.com/in/beatriz-leong/">Beatriz Leong</a>, pela ideia ❤️</p>
+        <p><strong>Fonte dos dados:</strong> <a href="https://www.imdb.com/interfaces/">IMDB</a>
+    </section>
+    </section>
+    
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
