@@ -311,6 +311,10 @@ label {
     font-style: italic;
 }
 
+.notes a{
+    color: #fff;
+}
+
 .footer-hr hr{
     border: 1px solid #fff;
     opacity: 0.25;
