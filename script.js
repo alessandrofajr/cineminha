@@ -1,4 +1,3 @@
-let url = "imdb_dataset.json";
 let movies
 let selectedGenres
 let genres = document.querySelectorAll( 'input[name="genre"]' )
