@@ -20,7 +20,7 @@
         </div>
 
         <div class="options-box">
-            <h2>Gênero</h2>
+            <h2>Escolha um ou mais gêneros</h2>
             <div class="genres">
                 <label class="checkbox-container">Ação
                     <input type="checkbox" id="Ação" name="genre" value="Ação">
@@ -103,7 +103,20 @@
                 </label>
              </div>
 
-            <h2>Duração (em minutos)</h2>
+             <h2>Você prefere filmes mais novos, a partir de 1990?</h2>
+             <div class="years">
+                 <label class="radio-container">Sim
+                     <input type="radio" id="sim" name="year" value="1990">
+                     <span class="radiomark"></span>
+                 </label>
+ 
+                 <label class="radio-container">Tanto faz
+                     <input type="radio" id="nao" name="year" value="0" checked>
+                     <span class="radiomark"></span>
+                 </label>
+             </div>  
+
+            <h2>Defina a duração máxima do filme (em minutos)</h2>
                 <div class="slider-container">
                     <div class="range-wrap">
                         <input type="range" class="range" id="slider-input" min="45" max="453" value="453">
