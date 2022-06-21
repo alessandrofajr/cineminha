@@ -98,6 +98,75 @@ p{
     margin-top: 30px;
 }
 
+.years{
+    max-height: 200px;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radiomark {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: #C30182 2px solid;
+    border-radius: 30px;
+}
+
+.radio-container input:checked ~ .radiomark {
+    background-color: #C30182;
+}
+
+.radiomark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container .radiomark:after {
+    left: 4px;
+    top: -1px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Show the checkmark when checked */
+.radio-container input:checked ~ .radiomark:after {
+    display: block;
+}
+
+
 /* Customize the label (the container) */
 .checkbox-container {
     display: block;
@@ -234,7 +303,70 @@ label {
     left: 50%;
     margin-left: -5px;
     margin-top: -1px;
-  }
+}
+
+.range-wrap-2 {
+    position: relative;
+    margin: 0 auto 3rem;
+}
+.range-2 {
+    width: 100%;
+    -webkit-appearance: none;
+    border-radius: 5px;  
+    height: 5px;
+    background: #DB7ABC;
+    
+}
+
+.range-2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #C30182;
+    cursor: pointer;
+}
+
+.range-2::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #C30182;
+    cursor: pointer;
+}
+
+.bubble-2 {
+    background: #C30182;
+    color: white;
+    width: 82px;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.bubble-2::before {
+    content: 'de ';
+}
+
+.bubble-2::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #C30182;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: -25%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
 
 .options-box hr{
     margin-top: 30px;
@@ -351,6 +483,11 @@ label {
         margin-right: 10px;
     }
 
+    .years{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     p{
         font-size: 1em;
     }
@@ -358,8 +495,9 @@ label {
     .options-box h2{
         color: #000;
         margin-left: 14px;
+        margin-right: 14px;
         padding-top: 15px;
-        font-size: 1.3em;
+        font-size: 1.15em;
     }
 
     .buttons{
