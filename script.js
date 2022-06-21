@@ -1,7 +1,9 @@
 let movies
 let selectedGenres
+let selectedYears = 0
 let genres = document.querySelectorAll( 'input[name="genre"]' )
-let sliderInput = document.getElementById("slider-input");
+let preferedYears = document.querySelectorAll('input[name="year"]')
+let sliderInput = document.getElementById("slider-input")
 let outputMovie = document.querySelector( '#movie' ) 
 let outputOriginalTitle = document.querySelector( '#originaltitle' ) 
 let outputGenre = document.querySelector( '#genre' ) 
@@ -9,6 +11,7 @@ let outputDirector = document.querySelector( '#director' )
 let outputYear = document.querySelector( '#year' )
 let outputRuntimeMinutes = document.querySelector( '#runtimeMinutes' )
 let outputRating = document.querySelector( '#rating' )
+
 
 async function readJson () {
   const res = await fetch("imdb_dataset.json")
@@ -32,6 +35,22 @@ function selectedGenre(){
   }
 }
 
+for ( let item of preferedYears) {
+  item.addEventListener( 'input', selectedYear )
+}
+
+
+function selectedYear(){
+selectedYears
+for ( let item of preferedYears) {
+  if (item.checked){
+    selectedYears = item.value
+  }
+}
+}
+
+
+
   //A partir dos gêneros selecionados, começa a filtrar entre os filmes possíveis
 function filterGenres( movies ) {
   return movies.filter(movie => selectedGenres.includes(movie.genre))
@@ -41,6 +60,12 @@ function filterGenres( movies ) {
 function filterDuration( movies ) {
   let duration = parseInt( sliderInput.value )
   return movies.filter( movie => movie.runtimeMinutes <= duration )
+}
+
+  //Faz um novo filtro a partir da preferência de ano
+function filterYear( movies ) {
+  let year = parseInt ( selectedYears )
+  return movies.filter( movie => movie.year >= year )
 }
 
   //Seleciona um filme aleatório a partir do último array após os filtros
@@ -58,7 +83,7 @@ function filter( movies ) {
 
   movies = filterGenres( movies )
   movies = filterDuration( movies )
-  
+  movies = filterYear( movies )
   let movie = pickRandom( movies )
 
   return movie
@@ -127,6 +152,7 @@ function checkAllGenres() {
 selectButton.addEventListener('click', checkAllGenres)
 
 // Código do slider que encontrei online
+
 const allRanges = document.querySelectorAll(".range-wrap");
 allRanges.forEach(wrap => {
     const range = wrap.querySelector(".range");
