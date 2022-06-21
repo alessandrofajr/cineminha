@@ -41,15 +41,13 @@ for ( let item of preferedYears) {
 
 
 function selectedYear(){
-selectedYears
-for ( let item of preferedYears) {
-  if (item.checked){
-    selectedYears = item.value
+  selectedYears
+  for ( let item of preferedYears) {
+    if (item.checked){
+      selectedYears = item.value
+    }
   }
 }
-}
-
-
 
   //A partir dos gêneros selecionados, começa a filtrar entre os filmes possíveis
 function filterGenres( movies ) {
